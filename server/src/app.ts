@@ -9,7 +9,6 @@ const app = express();
 app.listen(PORT, () => {
   logger.info(`App listening on ${PORT}`);
 });
-
 (async () => {
   await connectDB();
 })();

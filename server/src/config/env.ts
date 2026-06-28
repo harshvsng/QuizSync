@@ -1,5 +1,4 @@
-import { z } from ".pnpm/zod@4.3.6/node_modules/zod/index.cjs";
-
+import z from "zod";
 const envSchema = z.object({
   NODE_ENV: z.enum(["development", "production"]),
   PORT: z.string().transform((val: string) => {
