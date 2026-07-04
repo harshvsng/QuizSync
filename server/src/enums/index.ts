@@ -1,0 +1,15 @@
+/*
+RideStatus
+
+Searching
+
+Accepted
+
+Arrived
+
+Started
+
+Completed
+
+Cancelled
+ */

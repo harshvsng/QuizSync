@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { USER_ROLE } from "../constants";
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -11,7 +12,7 @@ const userSchema = new mongoose.Schema({
   },
   type: {
     type: String,
-    enum: ["Driver", "Passenger"],
+    enum: USER_ROLE,
   },
 });
 
