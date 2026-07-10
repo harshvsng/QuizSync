@@ -1,20 +1,23 @@
 import mongoose from "mongoose";
-import { USER_ROLE } from "../constants";
+import { USER_ROLES } from "../constants";
 
-const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      default: null,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
+    type: {
+      type: String,
+      enum: Object.values(USER_ROLES),
+    },
   },
-  phone: {
-    type: String,
-    required: true,
-  },
-  type: {
-    type: String,
-    enum: USER_ROLE,
-  },
-});
+  { timestamps: true }
+);
 
 const UserModel = mongoose.model("User", userSchema);
 

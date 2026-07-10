@@ -9,4 +9,7 @@ ERROR_MESSAGES
 HTTP_STATUS
 */
 
-export const USER_ROLE = ["Driver", "Passenger"];
+export const USER_ROLES = {
+  DRIVER: "Driver",
+  PASSENGER: "Passenger",
+};
