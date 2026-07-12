@@ -1,11 +1,11 @@
-import { Router } from "express";
+import express, { type Router } from "express";
 
-import authRoutes from "./auth.routes";
-import healthRouter from "./health.routes";
+import authRouter from "./auth";
+import healthRouter from "./health";
 
-const router: Router = Router();
+const router: Router = express.Router();
 
-router.use(`/health`, healthRouter);
-router.use("/auth", authRoutes);
+router.use("/health", healthRouter);
+router.use("/auth", authRouter);
 
 export default router;
