@@ -1,26 +1,25 @@
 import type { NextFunction, Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import AppError from "../errors/app-error";
-import logger from "../infra/logger/logger";
 
 export default function errorHandler(
-  err: unknown,
-  _req: Request,
-  res: Response,
-  _next: NextFunction
+    err: unknown,
+    _req: Request,
+    res: Response,
+    _next: NextFunction
 ) {
-  if (err instanceof AppError) {
-    logger.warn({ err }, "Operational error");
+    if (err instanceof AppError) {
+        console.log({ err }, "Operational error");
 
-    return res.status(err.statusCode).json({
-      error: err.message,
+        return res.status(err.statusCode).json({
+            error: err.message,
+        });
+    }
+
+    console.log({ err }, "Unhandled error");
+
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+        error: "Internal Server Error",
     });
-  }
-
-  logger.error({ err }, "Unhandled error");
-
-  res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-    error: "Internal Server Error",
-  });
-  return;
+    return;
 }

@@ -17,7 +17,9 @@
     "dependencies": {
         "express": "^5.2.1",
         "ioredis": "^5.11.1",
-        "mongoose": "^9.7.4"
+        "mongoose": "^9.7.4",
+        "zod": "^4.4.3",
+        "zod-validation-error": "^5.0.0"
     },
     "devDependencies": {
         "@eslint/js": "^10.0.1",
