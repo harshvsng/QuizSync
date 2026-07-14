@@ -8,7 +8,7 @@
         "format": "prettier --write .",
         "lint": "eslint --fix",
         "build": "tsc --project tsconfig.json",
-        "start": "node dist/app.js"
+        "start": "node dist/src/app.js"
     },
     "keywords": [],
     "author": "harshvsinghme",

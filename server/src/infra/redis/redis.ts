@@ -1,21 +1,27 @@
 import { Redis } from "ioredis";
 
-const redis = new Redis(process.env["REDIS_URL"]!, { enableReadyCheck: true });
+let redis: Redis | null = null;
 
-redis.on("connect", () => {
-    console.log("Redis connecting...");
-});
+export const connectRedis = () => {
+    redis = new Redis(process.env["REDIS_URL"]!, { enableReadyCheck: true });
 
-redis.on("ready", () => {
-    console.log("Redis connected");
-});
+    redis.on("connect", () => {
+        console.log("Redis connecting...");
+    });
 
-redis.on("error", (err: unknown) => {
-    console.log({ err }, "Redis error");
-});
+    redis.on("ready", () => {
+        console.log("Redis connected");
+    });
 
-redis.on("close", () => {
-    console.log("Redis connection closed");
-});
+    redis.on("error", (err: unknown) => {
+        console.log({ err }, "Redis error");
+    });
 
-export default redis;
+    redis.on("close", () => {
+        console.log("Redis connection closed");
+    });
+};
+
+export const disconnectRedis = async () => {
+    await redis!.quit();
+};
