@@ -1,34 +1,37 @@
 {
-    "name": "server",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "dev": "tsx --watch src/app.ts",
-        "format": "prettier --write .",
-        "lint": "eslint --fix",
-        "build": "tsc --project tsconfig.json",
-        "start": "node dist/src/app.js"
-    },
-    "keywords": [],
-    "author": "harshvsinghme",
-    "license": "ISC",
-    "packageManager": "pnpm@10.29.2",
-    "dependencies": {
-        "cors": "^2.8.6",
-        "express": "^5.2.1",
-        "ioredis": "^5.11.1",
-        "mongoose": "^9.7.4",
-        "zod": "^4.4.3",
-        "zod-validation-error": "^5.0.0"
-    },
-    "devDependencies": {
-        "@eslint/js": "^10.0.1",
-        "@types/express": "^5.0.6",
-        "eslint": "^10.7.0",
-        "globals": "^17.7.0",
-        "prettier": "^3.9.5",
-        "tsx": "^4.23.0",
-        "typescript-eslint": "^8.63.0"
-    }
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx --watch src/app.ts",
+    "format": "prettier --write .",
+    "lint": "eslint --fix",
+    "build": "tsc --project tsconfig.json",
+    "start": "node dist/src/app.js"
+  },
+  "keywords": [],
+  "author": "harshvsinghme",
+  "license": "ISC",
+  "packageManager": "pnpm@10.29.2",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "ioredis": "^5.11.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.4",
+    "zod": "^4.4.3",
+    "zod-validation-error": "^5.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "eslint": "^10.7.0",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.5",
+    "tsx": "^4.23.0",
+    "typescript-eslint": "^8.63.0"
+  }
 }
