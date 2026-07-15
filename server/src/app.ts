@@ -9,6 +9,8 @@ import { connectDB } from "./infra/database/mongodb";
 import { loadEnvFile } from "node:process";
 import { connectRedis, disconnectRedis } from "./infra/redis/redis";
 import { validateEnvVars } from "./utils/env";
+import morgan from "morgan"
+import logger from "./infra/logger/logger";
 
 const app: Express = express();
 
@@ -40,6 +42,8 @@ const limiter = rateLimit({
 app.use(limiter);
 
 app.use(express.json({ limit: "10kb" }));
+
+app.use(morgan("dev"))
 
 app.use("/", router);
 
