@@ -1,4 +1,5 @@
 import z from "zod";
+import logger from "../infra/logger/logger";
 const envSchema = z.object({
   NODE_ENV: z.enum(["development", "production"]),
   PORT: z.string().transform((val: string) => {
@@ -17,7 +18,7 @@ export const validateEnvVars = () => {
   try {
     envSchema.parse(process.env);
   } catch (error) {
-    console.error(`Environment validation error: ${error}`);
+    logger.error(`Environment validation error: ${error}`);
     process.exit(1);
   }
 };

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import logger from "../logger/logger";
 
 export const connectDB = async () => {
   if (mongoose.connection.readyState === 1) {
@@ -8,5 +9,5 @@ export const connectDB = async () => {
     appName: `RideFlow`,
   });
 
-  console.log(`Connected to the MongoDB`);
+  logger.info(`Connected to the MongoDB`);
 };

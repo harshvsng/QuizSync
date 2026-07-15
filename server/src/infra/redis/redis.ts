@@ -1,4 +1,5 @@
 import { Redis } from "ioredis";
+import logger from "../logger/logger";
 
 let redis: Redis | null = null;
 
@@ -6,19 +7,19 @@ export const connectRedis = () => {
   redis = new Redis(process.env["REDIS_URL"]!, { enableReadyCheck: true });
 
   redis.on("connect", () => {
-    console.log("Redis connecting...");
+    logger.info("Redis connecting...");
   });
 
   redis.on("ready", () => {
-    console.log("Redis connected");
+    logger.info("Redis connected");
   });
 
   redis.on("error", (err: unknown) => {
-    console.log({ err }, "Redis error");
+    logger.error({ err }, "Redis error");
   });
 
   redis.on("close", () => {
-    console.log("Redis connection closed");
+    logger.info("Redis connection closed");
   });
 };
 

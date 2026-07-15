@@ -51,16 +51,16 @@ app.use(notFound);
 app.use(errorHandler);
 
 const server = app.listen(process.env["PORT"], () => {
-  console.log(`Application is running at ${process.env["PORT"]}`);
+  logger.info(`Application is running at ${process.env["PORT"]}`);
 });
 
 async function shutdown(signal: string) {
-  console.log(`${signal} received — shutting down`);
+  logger.error(`${signal} received — shutting down`);
   server.close(async () => {
     // stop accepting new connections
     await mongoose.connection.close(); // close MongoDB
     await disconnectRedis(); // close Redis
-    console.log("Shutdown complete");
+    logger.info("Shutdown complete");
     process.exit(0);
   });
 }
@@ -69,11 +69,11 @@ process.on("SIGTERM", () => shutdown("SIGTERM"));
 process.on("SIGINT", () => shutdown("SIGINT")); // Ctrl+C in dev
 
 process.on("unhandledRejection", (reason) => {
-  console.log(reason, "Unhandled promise rejection");
+  logger.error(reason, "Unhandled promise rejection");
   process.exit(1);
 });
 
 process.on("uncaughtException", (err) => {
-  console.log(err, "Uncaught exception");
+  logger.error(err, "Uncaught exception");
   process.exit(1);
 });
