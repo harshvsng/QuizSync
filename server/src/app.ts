@@ -8,11 +8,13 @@ import mongoose from "mongoose";
 import { connectDB } from "./infra/database/mongodb";
 import { loadEnvFile } from "node:process";
 import { connectRedis, disconnectRedis } from "./infra/redis/redis";
+import { validateEnvVars } from "./utils/env";
 
 const app: Express = express();
 
 (async () => {
   loadEnvFile(".env");
+  validateEnvVars();
   await connectDB();
   connectRedis();
 })();
@@ -44,8 +46,8 @@ app.use("/", router);
 app.use(notFound);
 app.use(errorHandler);
 
-const server = app.listen(4000, () => {
-  console.log(`Application is running at 4000`);
+const server = app.listen(process.env["PORT"], () => {
+  console.log(`Application is running at ${process.env["PORT"]}`);
 });
 
 async function shutdown(signal: string) {
@@ -71,5 +73,3 @@ process.on("uncaughtException", (err) => {
   console.log(err, "Uncaught exception");
   process.exit(1);
 });
-
-// TODO: basic email-password login. and direct start then. run by tsx
