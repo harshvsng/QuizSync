@@ -1,13 +1,12 @@
 import { Request, Response } from "express";
 import AuthService from "../services/auth.service";
+import { StatusCodes } from "http-status-codes";
+
+const authService = AuthService.getInstance();
+
 export default class AuthController {
-  // 1. Hold the single instance in a private static property
   private static instance: AuthController | null = null;
 
-  // 2. Make the constructor private to block 'new AuthController()'
-  private constructor() {}
-
-  // 3. Provide a public static method to control access
   public static getInstance(): AuthController {
     if (!AuthController.instance) {
       AuthController.instance = new AuthController();
@@ -15,14 +14,14 @@ export default class AuthController {
     return AuthController.instance;
   }
 
-  async sendOTP(req: Request, res: Response) {
-    const authService = AuthService.getInstance();
-
-    const otpRef = await authService.sendOTP({
-      phone: req.body.phone,
+  public async signup(req: Request, res: Response) {
+    const accessToken = await authService.signup({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
       type: req.body.type,
     });
 
-    res.json({ otpRef });
+    res.status(StatusCodes.CREATED).json({ accessToken });
   }
 }

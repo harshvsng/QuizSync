@@ -1,48 +1,28 @@
 import { Redis } from "ioredis";
 import logger from "../logger/logger";
-import { utcTime } from "../../utils/time";
 
-const redis = new Redis(process.env["REDIS_URL"]!, { enableReadyCheck: true });
+let redis: Redis | null = null;
 
-redis.on("connect", () => {
-  logger.info("Redis connecting...");
-});
+export const connectRedis = () => {
+  redis = new Redis(process.env["REDIS_URL"]!, { enableReadyCheck: true });
 
-redis.on("ready", () => {
-  logger.info("Redis connected");
-});
+  redis.on("connect", () => {
+    logger.info("Redis connecting...");
+  });
 
-redis.on("error", (err: unknown) => {
-  logger.fatal({ err }, "Redis error");
-});
+  redis.on("ready", () => {
+    logger.info("Redis connected");
+  });
 
-redis.on("close", () => {
-  logger.warn("Redis connection closed");
-});
+  redis.on("error", (err: unknown) => {
+    logger.error({ err }, "Redis error");
+  });
 
-export async function checkRedis() {
-  const start = utcTime();
+  redis.on("close", () => {
+    logger.info("Redis connection closed");
+  });
+};
 
-  try {
-    if (redis.status !== "ready") {
-      redis.disconnect();
-      await redis.connect();
-      throw new Error("Reconnecting, Please try again");
-    }
-    const pong = await redis.ping();
-    if (pong !== "PONG") {
-      throw new Error("Redis ping failed");
-    }
-
-    return {
-      status: "up",
-      latencyMs: utcTime().diff(start),
-    };
-  } catch (error) {
-    return {
-      status: "down",
-      error: (error as Error).message || "Unknown issue",
-    };
-  }
-}
-export default redis;
+export const disconnectRedis = async () => {
+  await redis!.quit();
+};

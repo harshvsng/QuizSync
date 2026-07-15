@@ -1,15 +1,1 @@
-/*SOCKET_EVENTS
-
-RIDE_STATUS
-
-USER_ROLE
-
-ERROR_MESSAGES
-
-HTTP_STATUS
-*/
-
-export const USER_ROLES = {
-  DRIVER: "Driver",
-  PASSENGER: "Passenger",
-};
+export const USER_ROLES = ["Driver", "Passenger"];

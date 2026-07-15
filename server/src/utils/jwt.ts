@@ -1,16 +1,10 @@
-import jwt from "jsonwebtoken";
+import { sign, SignOptions, verify } from "jsonwebtoken";
 
-export const signAccessToken = (userId: number) =>
-  jwt.sign({ sub: userId }, process.env["JWT_ACCESS_SECRET"]!, {
-    expiresIn: Number(process.env["ACCESS_TOKEN_TTL"]),
-  });
-
-export const signRefreshToken = (userId: number) =>
-  jwt.sign({ sid: userId }, process.env["JWT_REFRESH_SECRET"]!, {
-    expiresIn: Number(process.env["REFRESH_TOKEN_TTL"]),
+export const signAccessToken = (userId: string) =>
+  sign({ sub: userId }, process.env["JWT_ACCESS_SECRET"] as string, {
+    expiresIn: process.env["ACCESS_TOKEN_TTL"] as SignOptions["expiresIn"],
+    issuer: "RideFlow",
   });
 
 export const verifyAccessToken = (token: string) =>
-  jwt.verify(token, process.env["JWT_ACCESS_SECRET"]!) as unknown as {
-    sub: number;
-  };
+  verify(token, process.env["JWT_ACCESS_SECRET"]!);

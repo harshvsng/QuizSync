@@ -1,20 +1,24 @@
-import express from "express";
-import logger from "./infra/logger/logger";
-import { connectDB } from "./infra/database/mongodb";
+import express, { type Express } from "express";
+import router from "./routes";
 import { notFound } from "./middlewares/not-found";
 import errorHandler from "./middlewares/error-handler";
-import cors from "cors";
 import rateLimit from "express-rate-limit";
-import router from "./routes";
+import cors from "cors";
 import mongoose from "mongoose";
-import redis from "./infra/redis/redis";
+import { connectDB } from "./infra/database/mongodb";
+import { loadEnvFile } from "node:process";
+import { connectRedis, disconnectRedis } from "./infra/redis/redis";
+import { validateEnvVars } from "./utils/env";
+import morgan from "morgan"
+import logger from "./infra/logger/logger";
 
-const PORT = process.env["PORT"];
-
-const app = express();
+const app: Express = express();
 
 (async () => {
+  loadEnvFile(".env");
+  validateEnvVars();
   await connectDB();
+  connectRedis();
 })();
 
 app.use(
@@ -39,21 +43,23 @@ app.use(limiter);
 
 app.use(express.json({ limit: "10kb" }));
 
+app.use(morgan("dev"))
+
 app.use("/", router);
 
 app.use(notFound);
 app.use(errorHandler);
 
-const server = app.listen(PORT, () => {
-  logger.info(`App listening on ${PORT}`);
+const server = app.listen(process.env["PORT"], () => {
+  logger.info(`Application is running at ${process.env["PORT"]}`);
 });
 
 async function shutdown(signal: string) {
-  logger.info(`${signal} received — shutting down`);
+  logger.error(`${signal} received — shutting down`);
   server.close(async () => {
     // stop accepting new connections
     await mongoose.connection.close(); // close MongoDB
-    await redis.quit(); // close Redis
+    await disconnectRedis(); // close Redis
     logger.info("Shutdown complete");
     process.exit(0);
   });
@@ -63,11 +69,11 @@ process.on("SIGTERM", () => shutdown("SIGTERM"));
 process.on("SIGINT", () => shutdown("SIGINT")); // Ctrl+C in dev
 
 process.on("unhandledRejection", (reason) => {
-  logger.fatal(reason, "Unhandled promise rejection");
+  logger.error(reason, "Unhandled promise rejection");
   process.exit(1);
 });
 
 process.on("uncaughtException", (err) => {
-  logger.fatal(err, "Uncaught exception");
+  logger.error(err, "Uncaught exception");
   process.exit(1);
 });

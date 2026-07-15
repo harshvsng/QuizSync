@@ -10,7 +10,7 @@ export default function errorHandler(
   _next: NextFunction
 ) {
   if (err instanceof AppError) {
-    logger.warn({ err }, "Operational error");
+    logger.error({ err }, "Operational error");
 
     return res.status(err.statusCode).json({
       error: err.message,
