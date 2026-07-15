@@ -2,6 +2,8 @@ import UserModel from "../models/user.model";
 import { ISignupPayload } from "../types/auth";
 import bcryptjs from "bcryptjs";
 import { signAccessToken } from "../utils/jwt";
+import AppError from "../errors/app-error";
+import { StatusCodes } from "http-status-codes";
 
 export default class AuthService {
   private static instance: AuthService | null = null;
@@ -14,6 +16,11 @@ export default class AuthService {
   }
 
   public async signup(payload: ISignupPayload) {
+    const userExists = await UserModel.findOne({ email: payload.email });
+
+    if (userExists)
+      throw new AppError("Email is already in use", StatusCodes.CONFLICT);
+
     const hashedPassword = bcryptjs.hashSync(payload.password, 12);
 
     const { _id } = await UserModel.create({

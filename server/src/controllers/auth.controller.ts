@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import AuthService from "../services/auth.service";
+import { StatusCodes } from "http-status-codes";
 
 const authService = AuthService.getInstance();
 
@@ -21,6 +22,6 @@ export default class AuthController {
       type: req.body.type,
     });
 
-    res.json({ accessToken });
+    res.status(StatusCodes.CREATED).json({ accessToken });
   }
 }
