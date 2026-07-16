@@ -24,4 +24,12 @@ export default class AuthController {
 
     res.status(StatusCodes.CREATED).json({ accessToken });
   }
+  public async login(req: Request, res: Response) {
+    const accessToken = await authService.login({
+      email: req.body.email,
+      password: req.body.password,
+    });
+
+    res.status(StatusCodes.OK).json({ accessToken });
+  }
 }

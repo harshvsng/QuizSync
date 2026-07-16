@@ -13,3 +13,15 @@ export const signupSchema = z.object({
   query: z.object({}).strict(),
   params: z.object({}).strict(),
 });
+
+
+export const loginSchema = z.object({
+  body: z
+    .object({
+      email: z.email().max(100),
+      password: z.string().min(8).max(50),
+    })
+    .strict(),
+  query: z.object({}).strict(),
+  params: z.object({}).strict(),
+});

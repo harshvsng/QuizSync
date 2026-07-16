@@ -4,3 +4,8 @@ export interface ISignupPayload {
   password: string;
   type: string;
 }
+
+export interface ILoginPayload {
+  email: string;
+  password: string;
+}

@@ -1,5 +1,5 @@
 import UserModel from "../models/user.model";
-import { ISignupPayload } from "../types/auth";
+import { ILoginPayload, ISignupPayload } from "../types/auth";
 import bcryptjs from "bcryptjs";
 import { signAccessToken } from "../utils/jwt";
 import AppError from "../errors/app-error";
@@ -18,8 +18,9 @@ export default class AuthService {
   public async signup(payload: ISignupPayload) {
     const userExists = await UserModel.findOne({ email: payload.email });
 
-    if (userExists)
+    if (userExists) {
       throw new AppError("Email is already in use", StatusCodes.CONFLICT);
+    }
 
     const hashedPassword = bcryptjs.hashSync(payload.password, 12);
 
@@ -31,6 +32,33 @@ export default class AuthService {
     });
 
     const accessToken = signAccessToken(_id.toString());
+
+    return accessToken;
+  }
+
+  public async login(payload: ILoginPayload) {
+    const userRecord = await UserModel.findOne({ email: payload.email }).select("+password");
+
+    if (!userRecord) {
+      throw new AppError(
+        "Either email or password is wrong",
+        StatusCodes.UNAUTHORIZED
+      );
+    }
+
+    const passwordMatched = bcryptjs.compareSync(
+      payload.password,
+      userRecord.password
+    );
+
+    if (!passwordMatched) {
+      throw new AppError(
+        "Either email or password is wrong",
+        StatusCodes.UNAUTHORIZED
+      );
+    }
+
+    const accessToken = signAccessToken(userRecord._id.toString());
 
     return accessToken;
   }
