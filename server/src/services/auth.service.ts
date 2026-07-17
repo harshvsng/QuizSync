@@ -37,7 +37,9 @@ export default class AuthService {
   }
 
   public async login(payload: ILoginPayload) {
-    const userRecord = await UserModel.findOne({ email: payload.email }).select("+password");
+    const userRecord = await UserModel.findOne({ email: payload.email }).select(
+      "+password"
+    );
 
     if (!userRecord) {
       throw new AppError(

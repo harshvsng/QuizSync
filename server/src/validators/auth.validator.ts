@@ -14,7 +14,6 @@ export const signupSchema = z.object({
   params: z.object({}).strict(),
 });
 
-
 export const loginSchema = z.object({
   body: z
     .object({
@@ -22,6 +21,11 @@ export const loginSchema = z.object({
       password: z.string().min(8).max(50),
     })
     .strict(),
+  query: z.object({}).strict(),
+  params: z.object({}).strict(),
+});
+export const sessionSchema = z.object({
+  body: z.undefined(),
   query: z.object({}).strict(),
   params: z.object({}).strict(),
 });
