@@ -2,6 +2,7 @@ import type { NextFunction, Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import AppError from "../errors/app-error";
 import logger from "../infra/logger/logger";
+import { AssertionError } from "node:assert";
 
 export default function errorHandler(
   err: unknown,
@@ -13,6 +14,14 @@ export default function errorHandler(
     logger.error({ err }, "Operational error");
 
     return res.status(err.statusCode).json({
+      error: err.message,
+    });
+  }
+
+  if (err instanceof AssertionError) {
+    logger.error({ err }, "Assertion error");
+
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
       error: err.message,
     });
   }
