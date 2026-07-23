@@ -6,7 +6,7 @@ export const connectDB = async () => {
     return;
   }
   await mongoose.connect(process.env[`DATABASE_URL`]!, {
-    appName: `RideFlow`,
+    appName: `QuizSync`,
   });
 
   logger.info(`Connected to the MongoDB`);
