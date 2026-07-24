@@ -33,7 +33,6 @@ export const requireAuth = async (
     _id: userSession._id.toString(),
     name: userSession.name,
     email: userSession.email,
-    type: userSession.type,
   } as ISession;
 
   next();

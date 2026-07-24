@@ -9,7 +9,8 @@
     "lint": "eslint --fix",
     "build": "tsc --project tsconfig.json",
     "verify": "pnpm lint && pnpm build",
-    "start": "node dist/src/app.js"
+    "start": "node dist/src/app.js",
+    "seed": "tsx src/scripts/seedQuestions.ts"
   },
   "keywords": [],
   "author": "harshvsinghme",

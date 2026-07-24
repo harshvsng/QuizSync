@@ -1,0 +1,177 @@
+[
+  {
+    "topic": "Node.js",
+    "title": "What is Node.js primarily used for?",
+    "options": [
+      "Building server-side applications",
+      "Designing web pages",
+      "Creating mobile apps only",
+      "Editing images"
+    ],
+    "answer": 0
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which JavaScript engine powers Node.js?",
+    "options": ["SpiderMonkey", "Chakra", "V8", "JavaScriptCore"],
+    "answer": 2
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which object represents the current executing process in Node.js?",
+    "options": ["window", "process", "global", "module"],
+    "answer": 1
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which module is used to create an HTTP server?",
+    "options": ["net", "url", "http", "https"],
+    "answer": 2
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which command initializes a new Node.js project with package.json?",
+    "options": ["node init", "npm init", "npm install", "node create"],
+    "answer": 1
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which file defines metadata and dependencies for a Node.js project?",
+    "options": [
+      "server.js",
+      "node_modules.json",
+      "package.json",
+      "config.json"
+    ],
+    "answer": 2
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which folder contains installed npm packages by default?",
+    "options": ["packages", "vendor", "modules", "node_modules"],
+    "answer": 3
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which function is used to import CommonJS modules?",
+    "options": ["import", "include", "require", "load"],
+    "answer": 2
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which global object is available in Node.js but not in browsers?",
+    "options": ["window", "document", "global", "navigator"],
+    "answer": 2
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which module is used to work with file paths?",
+    "options": ["path", "fs", "os", "url"],
+    "answer": 0
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which built-in module is used for reading and writing files?",
+    "options": ["path", "http", "fs", "stream"],
+    "answer": 2
+  },
+  {
+    "topic": "Node.js",
+    "title": "What does npm stand for?",
+    "options": [
+      "Node Package Manager",
+      "New Project Manager",
+      "Node Program Manager",
+      "Network Package Manager"
+    ],
+    "answer": 0
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which method reads an entire file asynchronously?",
+    "options": ["fs.read()", "fs.readFile()", "fs.open()", "fs.loadFile()"],
+    "answer": 1
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which method writes data to a file asynchronously?",
+    "options": ["fs.write()", "fs.saveFile()", "fs.writeFile()", "fs.append()"],
+    "answer": 2
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which keyword is commonly used with async functions to wait for a Promise?",
+    "options": ["yield", "await", "wait", "defer"],
+    "answer": 1
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which event is emitted when a readable stream has no more data?",
+    "options": ["finish", "close", "end", "done"],
+    "answer": 2
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which class is commonly used to create custom events?",
+    "options": ["Event", "Emitter", "EventEmitter", "CustomEvent"],
+    "answer": 2
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which module provides information about the operating system?",
+    "options": ["system", "process", "os", "machine"],
+    "answer": 2
+  },
+  {
+    "topic": "Node.js",
+    "title": "What is the default package manager that comes with Node.js?",
+    "options": ["Yarn", "pnpm", "npm", "Bun"],
+    "answer": 2
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which object contains environment variables?",
+    "options": ["process.env", "env.process", "global.env", "config.env"],
+    "answer": 0
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which module is commonly used to create TCP servers?",
+    "options": ["http", "tcp", "net", "socket"],
+    "answer": 2
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which API schedules a callback to execute immediately after the current operation completes?",
+    "options": [
+      "setTimeout()",
+      "setInterval()",
+      "setImmediate()",
+      "queueMicrotask()"
+    ],
+    "answer": 2
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which method stops a running HTTP server?",
+    "options": [
+      "server.end()",
+      "server.close()",
+      "server.stop()",
+      "server.destroy()"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which property returns the directory name of the current module in CommonJS?",
+    "options": ["__dirname", "__filename", "process.cwd()", "module.path"],
+    "answer": 0
+  },
+  {
+    "topic": "Node.js",
+    "title": "Which property returns the full path of the current file in CommonJS?",
+    "options": ["__dirname", "__filepath", "__filename", "process.file"],
+    "answer": 2
+  }
+]

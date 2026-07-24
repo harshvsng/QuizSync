@@ -28,7 +28,6 @@ export default class AuthService {
       name: payload.name,
       email: payload.email,
       password: hashedPassword,
-      type: payload.type,
     });
 
     const accessToken = signAccessToken(_id.toString());

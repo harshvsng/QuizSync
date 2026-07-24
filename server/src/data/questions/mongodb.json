@@ -1,0 +1,162 @@
+[
+  {
+    "topic": "MongoDB",
+    "title": "MongoDB is a ______ database.",
+    "options": ["Relational", "Document-oriented", "Graph", "Key-value only"],
+    "answer": 1
+  },
+  {
+    "topic": "MongoDB",
+    "title": "MongoDB stores data in the form of:",
+    "options": ["Tables", "Rows", "Documents", "Spreadsheets"],
+    "answer": 2
+  },
+  {
+    "topic": "MongoDB",
+    "title": "What is the default primary key field in every MongoDB document?",
+    "options": ["id", "_id", "uuid", "primaryKey"],
+    "answer": 1
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which command inserts a single document into a collection?",
+    "options": ["insertOne()", "insert()", "createOne()", "saveOne()"],
+    "answer": 0
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which command inserts multiple documents?",
+    "options": ["insertAll()", "insertMany()", "bulkInsert()", "createMany()"],
+    "answer": 1
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which method retrieves all matching documents?",
+    "options": ["findOne()", "find()", "get()", "select()"],
+    "answer": 1
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which method retrieves only the first matching document?",
+    "options": ["find()", "findFirst()", "findOne()", "getOne()"],
+    "answer": 2
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which operator is used to match values greater than a specified value?",
+    "options": ["$lt", "$gte", "$gt", "$eq"],
+    "answer": 2
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which operator is used to match values less than a specified value?",
+    "options": ["$lt", "$lte", "$gt", "$ne"],
+    "answer": 0
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which operator is used to match multiple possible values?",
+    "options": ["$all", "$or", "$in", "$exists"],
+    "answer": 2
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which method updates a single matching document?",
+    "options": ["updateOne()", "update()", "modifyOne()", "replaceOne()"],
+    "answer": 0
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which method updates multiple matching documents?",
+    "options": ["updateAll()", "updateMany()", "bulkUpdate()", "replaceMany()"],
+    "answer": 1
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which update operator increments a numeric field?",
+    "options": ["$inc", "$add", "$sum", "$increase"],
+    "answer": 0
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which update operator sets the value of a field?",
+    "options": ["$assign", "$update", "$set", "$modify"],
+    "answer": 2
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which update operator removes a field from a document?",
+    "options": ["$delete", "$unset", "$remove", "$drop"],
+    "answer": 1
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which method deletes a single document?",
+    "options": ["delete()", "removeOne()", "deleteOne()", "deleteFirst()"],
+    "answer": 2
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which method deletes multiple documents?",
+    "options": ["deleteMany()", "removeMany()", "deleteAll()", "dropMany()"],
+    "answer": 0
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which method permanently removes an entire collection?",
+    "options": [
+      "removeCollection()",
+      "drop()",
+      "deleteCollection()",
+      "clear()"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which feature improves query performance?",
+    "options": ["Indexes", "Views", "Triggers", "Stored Procedures"],
+    "answer": 0
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which method is used to sort query results?",
+    "options": ["order()", "sort()", "arrange()", "group()"],
+    "answer": 1
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which method limits the number of returned documents?",
+    "options": ["take()", "top()", "limit()", "count()"],
+    "answer": 2
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which method skips a specified number of documents?",
+    "options": ["offset()", "skip()", "ignore()", "omit()"],
+    "answer": 1
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which framework is used for complex data processing and transformations?",
+    "options": [
+      "Pipeline Framework",
+      "Aggregation Framework",
+      "Transformation Framework",
+      "Grouping Framework"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which aggregation stage filters documents?",
+    "options": ["$project", "$group", "$match", "$sort"],
+    "answer": 2
+  },
+  {
+    "topic": "MongoDB",
+    "title": "Which aggregation stage groups documents by a specified key?",
+    "options": ["$group", "$match", "$bucket", "$lookup"],
+    "answer": 0
+  }
+]

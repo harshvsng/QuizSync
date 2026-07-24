@@ -1,0 +1,197 @@
+[
+  {
+    "topic": "Express.js",
+    "title": "What is Express.js?",
+    "options": [
+      "A Node.js web framework",
+      "A database",
+      "A frontend framework",
+      "A JavaScript runtime"
+    ],
+    "answer": 0
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which method is used to create an Express application?",
+    "options": ["express.create()", "express()", "new Express()", "app()"],
+    "answer": 1
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which method is used to define a GET route?",
+    "options": ["app.get()", "app.fetch()", "app.request()", "app.routeGet()"],
+    "answer": 0
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which method is used to define a POST route?",
+    "options": ["app.send()", "app.post()", "app.create()", "app.push()"],
+    "answer": 1
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which middleware parses incoming JSON request bodies?",
+    "options": [
+      "express.urlencoded()",
+      "bodyParser.json()",
+      "express.json()",
+      "express.body()"
+    ],
+    "answer": 2
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which middleware parses URL-encoded form data?",
+    "options": [
+      "express.urlencoded()",
+      "express.json()",
+      "express.form()",
+      "express.body()"
+    ],
+    "answer": 0
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which object contains route parameters?",
+    "options": ["req.query", "req.params", "req.body", "req.headers"],
+    "answer": 1
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which object contains query string parameters?",
+    "options": ["req.params", "req.query", "req.body", "req.locals"],
+    "answer": 1
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which object contains data sent in the request body?",
+    "options": ["req.params", "req.query", "req.body", "req.payload"],
+    "answer": 2
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which method starts an Express server?",
+    "options": ["app.run()", "app.listen()", "app.start()", "server.listen()"],
+    "answer": 1
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which function is used to create a router instance?",
+    "options": [
+      "express.Route()",
+      "express.Router()",
+      "express.router()",
+      "new Router()"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "Express.js",
+    "title": "What is the purpose of middleware in Express?",
+    "options": [
+      "Store application data",
+      "Handle requests and responses during the request lifecycle",
+      "Compile JavaScript code",
+      "Connect to MongoDB"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which function passes control to the next middleware?",
+    "options": ["continue()", "next()", "forward()", "proceed()"],
+    "answer": 1
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which status code indicates a successful request?",
+    "options": ["404", "500", "200", "401"],
+    "answer": 2
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which response method sends JSON data?",
+    "options": [
+      "res.sendJson()",
+      "res.json()",
+      "res.writeJson()",
+      "res.response()"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which response method sends plain text or HTML?",
+    "options": ["res.send()", "res.json()", "res.write()", "res.render()"],
+    "answer": 0
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which response method sets the HTTP status code?",
+    "options": [
+      "res.code()",
+      "res.status()",
+      "res.httpStatus()",
+      "res.responseCode()"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which middleware is commonly used to enable Cross-Origin Resource Sharing (CORS)?",
+    "options": ["helmet", "cors", "morgan", "compression"],
+    "answer": 1
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which middleware is commonly used to log HTTP requests?",
+    "options": ["helmet", "compression", "morgan", "cors"],
+    "answer": 2
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which middleware helps secure HTTP headers?",
+    "options": ["helmet", "cors", "body-parser", "cookie-parser"],
+    "answer": 0
+  },
+  {
+    "topic": "Express.js",
+    "title": "How are route parameters defined in Express?",
+    "options": ["/users/{id}", "/users/:id", "/users/<id>", "/users/?id"],
+    "answer": 1
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which HTTP method is typically used to update an existing resource completely?",
+    "options": ["POST", "PATCH", "PUT", "GET"],
+    "answer": 2
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which HTTP method is typically used for partial updates?",
+    "options": ["PATCH", "PUT", "POST", "OPTIONS"],
+    "answer": 0
+  },
+  {
+    "topic": "Express.js",
+    "title": "Which middleware should usually be registered before defining routes?",
+    "options": [
+      "404 handler",
+      "Body parsing middleware",
+      "Error handler",
+      "Router"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "Express.js",
+    "title": "What is the correct function signature for an Express error-handling middleware?",
+    "options": [
+      "(req, res, next)",
+      "(error, req, res)",
+      "(err, req, res, next)",
+      "(req, err, res, next)"
+    ],
+    "answer": 2
+  }
+]
