@@ -1,0 +1,207 @@
+[
+  {
+    "topic": "React",
+    "title": "What is React primarily used for?",
+    "options": [
+      "Building user interfaces",
+      "Managing databases",
+      "Running backend servers",
+      "Creating operating systems"
+    ],
+    "answer": 0
+  },
+  {
+    "topic": "React",
+    "title": "Who developed React?",
+    "options": ["Google", "Microsoft", "Meta", "Netflix"],
+    "answer": 2
+  },
+  {
+    "topic": "React",
+    "title": "What is JSX?",
+    "options": [
+      "A CSS preprocessor",
+      "A JavaScript XML syntax extension",
+      "A database query language",
+      "A package manager"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "React",
+    "title": "Which hook is used to manage component state?",
+    "options": ["useEffect", "useMemo", "useState", "useContext"],
+    "answer": 2
+  },
+  {
+    "topic": "React",
+    "title": "Which hook is used to perform side effects?",
+    "options": ["useRef", "useEffect", "useState", "useReducer"],
+    "answer": 1
+  },
+  {
+    "topic": "React",
+    "title": "What is the purpose of the key prop in lists?",
+    "options": [
+      "To style list items",
+      "To uniquely identify elements for reconciliation",
+      "To store state",
+      "To define routes"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "React",
+    "title": "How is data typically passed from a parent component to a child component?",
+    "options": [
+      "Through props",
+      "Through state",
+      "Using localStorage",
+      "Using refs"
+    ],
+    "answer": 0
+  },
+  {
+    "topic": "React",
+    "title": "Which hook provides access to a Context value?",
+    "options": ["useContext", "useMemo", "useCallback", "useReducer"],
+    "answer": 0
+  },
+  {
+    "topic": "React",
+    "title": "Which hook returns a mutable object whose value persists across renders?",
+    "options": ["useEffect", "useState", "useRef", "useMemo"],
+    "answer": 2
+  },
+  {
+    "topic": "React",
+    "title": "What does React use to efficiently update the UI?",
+    "options": ["Shadow DOM", "Virtual DOM", "Browser Cache", "Real DOM"],
+    "answer": 1
+  },
+  {
+    "topic": "React",
+    "title": "Which hook is useful for memoizing expensive calculations?",
+    "options": ["useMemo", "useEffect", "useState", "useRef"],
+    "answer": 0
+  },
+  {
+    "topic": "React",
+    "title": "Which hook is used to memoize callback functions?",
+    "options": ["useReducer", "useMemo", "useCallback", "useEffect"],
+    "answer": 2
+  },
+  {
+    "topic": "React",
+    "title": "Which hook is commonly used for complex state logic?",
+    "options": ["useReducer", "useRef", "useMemo", "useId"],
+    "answer": 0
+  },
+  {
+    "topic": "React",
+    "title": "What happens when a component's state changes?",
+    "options": [
+      "The application reloads",
+      "The component re-renders",
+      "The browser restarts",
+      "Nothing happens"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "React",
+    "title": "Which prop is used to render nested components inside another component?",
+    "options": ["children", "content", "nested", "component"],
+    "answer": 0
+  },
+  {
+    "topic": "React",
+    "title": "Which method is used to conditionally render elements in React?",
+    "options": [
+      "Using JavaScript expressions",
+      "Using SQL queries",
+      "Using HTML conditions",
+      "Using CSS selectors"
+    ],
+    "answer": 0
+  },
+  {
+    "topic": "React",
+    "title": "What is the default direction of data flow in React?",
+    "options": ["Bidirectional", "Top-down", "Bottom-up", "Circular"],
+    "answer": 1
+  },
+  {
+    "topic": "React",
+    "title": "Which hook generates a unique stable ID for accessibility?",
+    "options": ["useId", "useRef", "useMemo", "useUnique"],
+    "answer": 0
+  },
+  {
+    "topic": "React",
+    "title": "Which syntax is used to attach an event handler to a button?",
+    "options": ["onclick", "onClick", "click", "on-click"],
+    "answer": 1
+  },
+  {
+    "topic": "React",
+    "title": "Which package is commonly used for client-side routing in React applications?",
+    "options": [
+      "react-route",
+      "react-router-dom",
+      "react-router",
+      "react-navigation"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "React",
+    "title": "What is the purpose of React Fragments?",
+    "options": [
+      "To add CSS styles",
+      "To group multiple elements without adding extra DOM nodes",
+      "To improve API performance",
+      "To create routes"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "React",
+    "title": "Which hook is used to synchronize with external systems such as APIs?",
+    "options": ["useEffect", "useMemo", "useState", "useReducer"],
+    "answer": 0
+  },
+  {
+    "topic": "React",
+    "title": "What is the purpose of React.StrictMode?",
+    "options": [
+      "To improve styling",
+      "To highlight potential problems during development",
+      "To optimize production performance",
+      "To reduce bundle size"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "React",
+    "title": "Which function is commonly used to create a React application entry point in React 18?",
+    "options": [
+      "ReactDOM.render()",
+      "createRoot()",
+      "renderRoot()",
+      "mountApp()"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "React",
+    "title": "Which statement about React components is true?",
+    "options": [
+      "Component names should start with an uppercase letter",
+      "Components must always be classes",
+      "Components cannot return JSX",
+      "Components cannot accept props"
+    ],
+    "answer": 0
+  }
+]

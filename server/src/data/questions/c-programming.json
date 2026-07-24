@@ -1,0 +1,277 @@
+[
+  {
+    "topic": "C Programming",
+    "title": "Who developed the C programming language?",
+    "options": [
+      "Dennis Ritchie",
+      "Bjarne Stroustrup",
+      "James Gosling",
+      "Ken Thompson"
+    ],
+    "answer": 0
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which symbol is used to terminate a statement in C?",
+    "options": [
+      ".",
+      ":",
+      ";",
+      ","
+    ],
+    "answer": 2
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which header file contains the printf() function?",
+    "options": [
+      "<stdlib.h>",
+      "<stdio.h>",
+      "<string.h>",
+      "<math.h>"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which of the following is a valid C data type?",
+    "options": [
+      "int",
+      "integer",
+      "number",
+      "decimal"
+    ],
+    "answer": 0
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which function is the entry point of every C program?",
+    "options": [
+      "start()",
+      "main()",
+      "init()",
+      "run()"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which operator is used to access the value at a pointer's address?",
+    "options": [
+      "&",
+      "*",
+      "->",
+      "%"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which operator is used to obtain the address of a variable?",
+    "options": [
+      "*",
+      "&",
+      "#",
+      "@"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which loop checks its condition after executing the loop body?",
+    "options": [
+      "for",
+      "while",
+      "do...while",
+      "foreach"
+    ],
+    "answer": 2
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which keyword is used to define a constant in C?",
+    "options": [
+      "constant",
+      "const",
+      "final",
+      "static"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which function is used to read formatted input from the keyboard?",
+    "options": [
+      "gets()",
+      "scanf()",
+      "fgets()",
+      "read()"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which function is safer than gets() for reading a string?",
+    "options": [
+      "scanf()",
+      "fgets()",
+      "puts()",
+      "strlen()"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "C Programming",
+    "title": "What is the default return type of main() in standard C?",
+    "options": [
+      "void",
+      "char",
+      "int",
+      "float"
+    ],
+    "answer": 2
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which storage class preserves the value of a local variable between function calls?",
+    "options": [
+      "auto",
+      "register",
+      "static",
+      "extern"
+    ],
+    "answer": 2
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which keyword is used to declare a variable defined in another source file?",
+    "options": [
+      "static",
+      "volatile",
+      "extern",
+      "register"
+    ],
+    "answer": 2
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which function calculates the length of a string?",
+    "options": [
+      "sizeof()",
+      "strlen()",
+      "strcpy()",
+      "strcmp()"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which function copies one string into another?",
+    "options": [
+      "strcat()",
+      "strcmp()",
+      "strcpy()",
+      "strlen()"
+    ],
+    "answer": 2
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which function compares two strings?",
+    "options": [
+      "strcmp()",
+      "strcpy()",
+      "strcat()",
+      "memcmp()"
+    ],
+    "answer": 0
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which operator is used to access a structure member?",
+    "options": [
+      ".",
+      "->",
+      "::",
+      "*"
+    ],
+    "answer": 0
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which operator is used to access a structure member through a pointer?",
+    "options": [
+      ".",
+      "::",
+      "->",
+      "&"
+    ],
+    "answer": 2
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which function dynamically allocates memory and initializes it to zero?",
+    "options": [
+      "malloc()",
+      "calloc()",
+      "realloc()",
+      "free()"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which function releases dynamically allocated memory?",
+    "options": [
+      "delete()",
+      "remove()",
+      "free()",
+      "realloc()"
+    ],
+    "answer": 2
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which preprocessor directive is used to include a header file?",
+    "options": [
+      "#define",
+      "#include",
+      "#ifdef",
+      "#pragma"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which operator returns the size of a data type or variable?",
+    "options": [
+      "length",
+      "size",
+      "sizeof",
+      "count"
+    ],
+    "answer": 2
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which keyword is used to define a custom data type in C?",
+    "options": [
+      "struct",
+      "typedef",
+      "union",
+      "enum"
+    ],
+    "answer": 1
+  },
+  {
+    "topic": "C Programming",
+    "title": "Which file opening mode creates a file for writing and truncates it if it already exists?",
+    "options": [
+      "r",
+      "a",
+      "w",
+      "r+"
+    ],
+    "answer": 2
+  }
+]
