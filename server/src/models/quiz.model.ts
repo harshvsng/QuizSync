@@ -17,18 +17,6 @@ const quizSchema = new mongoose.Schema(
       type: [Types.ObjectId],
       required: true,
     },
-    joiningCredentials: {
-      id: {
-        type: String,
-        required: true,
-        trim: true,
-      },
-      password: {
-        type: String,
-        required: true,
-        trim: true,
-      },
-    },
   },
   {
     timestamps: true,
