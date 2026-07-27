@@ -3,7 +3,6 @@
 import React, { ReactNode, useEffect } from "react";
 import { useStore } from "@/store/useStore";
 import { sessionAPI } from "@/api/auth";
-import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { IUserSession } from "@/types/auth";
 
@@ -24,7 +23,6 @@ export default function Provider({ children }: ProviderProps) {
           return;
         }
         setUser(response.data as IUserSession);
-        router.push(`/`);
       });
     }
   }, [router, setUser, user]);
