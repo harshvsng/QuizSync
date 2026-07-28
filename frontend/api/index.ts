@@ -20,7 +20,7 @@ API.interceptors.response.use(
 
     // Reject the promise so the calling function can still handle the error
     return Promise.reject(error);
-  },
+  }
 );
 
 export const handleError = (error: unknown) => {

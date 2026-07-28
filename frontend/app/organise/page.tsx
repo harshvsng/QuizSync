@@ -15,7 +15,7 @@ const defaultOrganisePayload = {
 
 const CreateQuiz = () => {
   const [organiseQuizPayload, setOrganiseQuizPayload] = useState(
-    defaultOrganisePayload,
+    defaultOrganisePayload
   );
 
   const [topics, setTopics] = useState<string[]>([]);
@@ -98,7 +98,10 @@ const CreateQuiz = () => {
       <section className="mt-2">
         {joiningLink && (
           <div className="text-center">
-            <Link href={joiningLink} className="text-blue-600 text-sm underline">
+            <Link
+              href={joiningLink}
+              className="text-blue-600 text-sm underline"
+            >
               Go to Quiz
             </Link>
           </div>

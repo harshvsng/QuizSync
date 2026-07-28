@@ -36,7 +36,7 @@ const Login = () => {
     }
     localStorage.setItem(
       "accessToken",
-      (response.data as { accessToken: string }).accessToken,
+      (response.data as { accessToken: string }).accessToken
     );
 
     toast.success(`Login successful`);
