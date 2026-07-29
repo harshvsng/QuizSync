@@ -18,10 +18,17 @@ export default class QuizController {
   public async create(req: IExtendedRequest, res: Response) {
     const joiningLink = await quizService.create({
       title: req.body.title,
-      host: req.user!._id,
+      userId: req.user!._id,
       topic: req.body.topic,
     });
 
     res.status(StatusCodes.OK).json({ joiningLink });
+  }
+  public async getSpecific(req: IExtendedRequest, res: Response) {
+    const quiz = await quizService.getSpecific({
+      id: req.params.id.toString(),
+    });
+
+    res.status(StatusCodes.OK).json({ quiz });
   }
 }

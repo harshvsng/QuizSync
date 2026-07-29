@@ -10,3 +10,13 @@ export const createSchema = z.object({
   query: z.object({}).strict(),
   params: z.object({}).strict(),
 });
+
+export const getSpecificSchema = z.object({
+  body: z.undefined(),
+  query: z.object({}).strict(),
+  params: z
+    .object({
+      id: z.string().length(24),
+    })
+    .strict(),
+});

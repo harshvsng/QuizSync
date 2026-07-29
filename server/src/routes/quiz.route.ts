@@ -3,7 +3,7 @@ import { requireAuth } from "../middlewares/auth.middleware";
 import QuizController from "../controllers/quiz.controller";
 import validate from "../middlewares/validate.middleware";
 import { asyncHandler } from "../middlewares/async-handler";
-import { createSchema } from "../validators/quiz.validator";
+import { createSchema, getSpecificSchema } from "../validators/quiz.validator";
 
 const router: Router = express.Router();
 
@@ -16,4 +16,10 @@ router.post(
   asyncHandler(quizController.create)
 );
 
+router.get(
+  "/:id",
+  validate(getSpecificSchema),
+  asyncHandler(requireAuth),
+  asyncHandler(quizController.getSpecific)
+);
 export default router;
