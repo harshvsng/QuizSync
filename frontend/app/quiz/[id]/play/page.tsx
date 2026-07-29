@@ -13,7 +13,7 @@ const defaultOrganisePayload = {
   topic: "",
 };
 
-const CreateQuiz = () => {
+const PlayQuiz = () => {
   const [organiseQuizPayload, setOrganiseQuizPayload] = useState(
     defaultOrganisePayload
   );
@@ -111,4 +111,4 @@ const CreateQuiz = () => {
     </main>
   );
 };
-export default CreateQuiz;
+export default PlayQuiz;
