@@ -42,7 +42,7 @@ export default class QuizService {
       _id: payload.id,
     })
       .populate("host", "name")
-      .select("title host");
+      .select("title host status");
 
     if (!quiz) {
       throw new AppError("No matching quiz found", StatusCodes.CONFLICT);

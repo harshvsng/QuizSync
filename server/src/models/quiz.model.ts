@@ -1,4 +1,5 @@
 import mongoose, { Types } from "mongoose";
+import { QUIZ_STATUS } from "../enums/quiz.enum";
 
 const quizSchema = new mongoose.Schema(
   {
@@ -16,6 +17,11 @@ const quizSchema = new mongoose.Schema(
     questionSet: {
       type: [Types.ObjectId],
       required: true,
+    },
+    status: {
+      type: String,
+      enum: QUIZ_STATUS,
+      default: QUIZ_STATUS.WAITING,
     },
   },
   {
