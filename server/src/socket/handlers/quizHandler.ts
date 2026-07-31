@@ -1,6 +1,7 @@
 import { Server, Socket } from "socket.io";
 import logger from "../../infra/logger/logger";
 import QuizModel from "../../models/quiz.model";
+import QuestionModel from "../../models/question.model";
 
 // Simple map to track active game intervals running on this node instanced server
 const activeTimers: Record<string, NodeJS.Timeout> = {};
@@ -22,21 +23,15 @@ export const registerQuizHandlers = (io: Server, socket: Socket) => {
     try {
       // Find the quiz structure and load attached questions from MongoDB
       const quiz = await QuizModel.findById(quizId);
-      // if (!quiz || quiz.host.toString() !== userId) return;
+      if (!quiz || quiz.host.toString() !== userId) return;
 
-      // Mock question data for testing architecture:
-      const questions = [
-        { text: "What is 2 + 2?", options: ["3", "4", "5"], correctIndex: 1 },
-        {
-          text: "What is the capital of France?",
-          options: ["London", "Paris", "Berlin"],
-          correctIndex: 1,
-        },
-      ];
+      const questions = await QuestionModel.find({
+        _id: { $in: quiz.questionSet },
+      }).select("title options answer");
 
       // Update quiz state in MongoDB here...
-      // quiz.status = "in_progress";
-      // await quiz.save();
+      quiz.status = "In Progress";
+      await quiz.save();
 
       // Alert all room listeners to clear out waiting screens
       io.to(`quiz:${quizId}`).emit("quiz:started");
@@ -51,6 +46,9 @@ export const registerQuizHandlers = (io: Server, socket: Socket) => {
           delete activeTimers[quizId];
 
           io.to(`quiz:${quizId}`).emit("quiz:ended");
+          QuizModel.findByIdAndUpdate({ _id: quizId }, { status: "Ended" })
+            .then(undefined)
+            .catch(undefined);
           logger.info(`Quiz ${quizId} has naturalized and finished.`);
           return;
         }
@@ -58,7 +56,7 @@ export const registerQuizHandlers = (io: Server, socket: Socket) => {
         const rawQuestion = questions[currentQuestionIndex];
         // Strip the correctIndex out so players cannot cheat using devTools network inspections
         const cleanQuestion = {
-          text: rawQuestion.text,
+          title: rawQuestion.title,
           options: rawQuestion.options,
         };
 

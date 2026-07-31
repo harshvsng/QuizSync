@@ -1,4 +1,3 @@
-
 import express, { type Express } from "express";
 import router from "./routes";
 import { notFound } from "./middlewares/not-found";

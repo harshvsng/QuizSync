@@ -27,7 +27,9 @@ export class SocketService {
     if (!service.socket) {
       // 1. Fetch the token from localStorage securely on the client side
       const token =
-        typeof window !== "undefined" ? localStorage.getItem("accessToken") : null;
+        typeof window !== "undefined"
+          ? localStorage.getItem("accessToken")
+          : null;
 
       service.socket = io(service.url, {
         autoConnect: true,
