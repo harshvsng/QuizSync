@@ -1,7 +1,7 @@
 import AppError from "../errors/app-error";
 import { StatusCodes } from "http-status-codes";
 import QuizModel from "../models/quiz.model";
-import { IQuizPayload } from "../types/quiz";
+import { IGetSpecificQuizPayload, IQuizPayload } from "../types/quiz";
 import QuestionModel from "../models/question.model";
 
 export default class QuizService {
@@ -29,12 +29,25 @@ export default class QuizService {
 
     const { _id } = await QuizModel.create({
       title: payload.title,
-      host: payload.host,
+      host: payload.userId,
       questionSet: questionSet,
     });
 
-    const joiningLink = `${process.env[`APP_URL`]}/quiz/${_id}/play`;
+    const joiningLink = `${process.env[`APP_URL`]}/quiz/${_id}`;
 
     return joiningLink;
+  }
+  public async getSpecific(payload: IGetSpecificQuizPayload) {
+    const quiz = await QuizModel.findOne({
+      _id: payload.id,
+    })
+      .populate("host", "name")
+      .select("title host status");
+
+    if (!quiz) {
+      throw new AppError("No matching quiz found", StatusCodes.CONFLICT);
+    }
+
+    return quiz;
   }
 }

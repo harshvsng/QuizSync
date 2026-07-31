@@ -1,9 +1,9 @@
 import { ILoginPayload, ISignupPayload } from "@/types/auth";
-import API, { handleError } from ".";
+import { API, handleError } from ".";
 import { IAPIResponse } from "@/types/common";
 
 export const signupAPI = async (
-  payload: ISignupPayload,
+  payload: ISignupPayload
 ): Promise<IAPIResponse> => {
   try {
     const { data } = await API.post("/auth/signup", payload);
@@ -14,7 +14,7 @@ export const signupAPI = async (
 };
 
 export const loginAPI = async (
-  payload: ILoginPayload,
+  payload: ILoginPayload
 ): Promise<IAPIResponse> => {
   try {
     const { data } = await API.post("/auth/login", payload);
@@ -26,7 +26,7 @@ export const loginAPI = async (
 
 export const sessionAPI = async (): Promise<IAPIResponse> => {
   try {
-    const { data } = await API.post("/auth/session", undefined, {
+    const { data } = await API.get("/auth/session", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

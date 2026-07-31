@@ -24,7 +24,7 @@ router.post(
   asyncHandler(authController.login)
 );
 
-router.post(
+router.get(
   "/session",
   validate(sessionSchema),
   asyncHandler(requireAuth),

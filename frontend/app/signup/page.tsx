@@ -1,9 +1,10 @@
 "use client";
 import { Button, TextInput } from "@mantine/core";
 import Link from "next/link";
-import React, { SubmitEvent, useState } from "react";
+import React, { SubmitEvent, useEffect, useState } from "react";
 import { signupAPI } from "@/api/auth";
 import { toast } from "react-toastify";
+import { useStore } from "@/store/useStore";
 import { useRouter } from "next/navigation";
 
 const defaultSignupPayload = {
@@ -14,8 +15,14 @@ const defaultSignupPayload = {
 
 const Login = () => {
   const [signupPayload, setSignupPayload] = useState(defaultSignupPayload);
-
+  const { user } = useStore();
   const router = useRouter();
+
+  useEffect(() => {
+    if (![undefined, null].includes(user as never)) {
+      router.push(`/`);
+    }
+  }, [router, user]);
 
   const handlePayloadChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSignupPayload({ ...signupPayload, [e.target.name]: e.target.value });
@@ -30,12 +37,12 @@ const Login = () => {
     }
     localStorage.setItem(
       "accessToken",
-      (response.data as { accessToken: string }).accessToken,
+      (response.data as { accessToken: string }).accessToken
     );
 
     toast.success(`Signup successful`);
     setTimeout(() => {
-      window.location.reload()
+      window.location.reload();
     }, 1500);
   };
 

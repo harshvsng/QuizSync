@@ -1,5 +1,8 @@
 export interface IQuizPayload {
   title: string;
-  host: string;
+  userId: string;
   topic: string;
+}
+export interface IGetSpecificQuizPayload {
+  id: string;
 }
